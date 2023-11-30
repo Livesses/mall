@@ -18,6 +18,7 @@
         <module>color-common</module>
         <module>color-gateway</module>
         <module>renren-fast</module>
+        <module>color-third-party-services</module>
     </modules>
 
 </project>

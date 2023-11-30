@@ -1,4 +1,7 @@
 spring:
+  devtools:
+    restart:
+      enabled: true
   datasource:
     username: root
     password: bkl321
@@ -9,6 +12,7 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
 

@@ -8,9 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="color-member" />
-        <module name="color-common" />
+        <module name="color-third-party-services" />
         <module name="color-product" />
         <module name="color-gateway" />
+        <module name="color-common" />
         <module name="color-coupon" />
         <module name="color-order" />
         <module name="color-ware" />
@@ -18,7 +19,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="color-common (1)" target="1.8" />
+      <module name="color-common (2)" target="1.8" />
       <module name="color-fast" target="1.8" />
+      <module name="color-third-party-service" target="1.8" />
       <module name="gulimall-product" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -30,6 +34,7 @@
       <module name="color-member" options="-parameters" />
       <module name="color-order" options="-parameters" />
       <module name="color-product" options="-parameters" />
+      <module name="color-third-party-services" options="-parameters" />
       <module name="color-ware" options="-parameters" />
       <module name="gulimall-product" options="-parameters" />
       <module name="renren-fast" options="-parameters" />

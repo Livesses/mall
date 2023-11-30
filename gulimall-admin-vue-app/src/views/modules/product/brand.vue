@@ -29,13 +29,13 @@
       <el-table-column type="selection" header-align="center" align="center" width="50"></el-table-column>
       <el-table-column prop="brandId" header-align="center" align="center" label="品牌id"></el-table-column>
       <el-table-column prop="name" header-align="center" align="center" label="品牌名"></el-table-column>
-      <el-table-column prop="logo" header-align="center" align="center" label="品牌logo地址">
+      <el-table-column prop="logo" header-align="center" align="center" label="品牌logo" >
         <template slot-scope="scope">
           <!-- <el-image
               style="width: 100px; height: 80px"
               :src="scope.row.logo"
           fit="fill"></el-image>-->
-          <img :src="scope.row.logo" style="width: 100px; height: 80px" />
+          <img :src="scope.row.logo" style="width: 100px; height: 50px" alt="品牌logo"/>
         </template>
       </el-table-column>
       <el-table-column prop="descript" header-align="center" align="center" label="介绍"></el-table-column>
@@ -107,6 +107,7 @@
 <script>
 import AddOrUpdate from "./brand-add-or-update";
 import CategoryCascader from "../common/category-cascader";
+import {isAuth} from "../../../utils";
 export default {
   data() {
     return {
@@ -135,6 +136,7 @@ export default {
     this.getDataList();
   },
   methods: {
+    isAuth,
     addCatelogSelect() {
       //{"brandId":1,"catelogId":2}
       this.popCatelogSelectVisible =false;

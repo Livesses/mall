@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
@@ -16,11 +17,15 @@
         <option value="$PROJECT_DIR$/color-common/pom.xml" />
         <option value="$PROJECT_DIR$/color-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/color-fast/pom.xml" />
+        <option value="$PROJECT_DIR$/gulimall-third-party/pom.xml" />
+        <option value="$PROJECT_DIR$/color-third-party-service/pom.xml" />
+        <option value="$PROJECT_DIR$/color-third-party-services/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/color-fast/pom.xml" />
+        <option value="$PROJECT_DIR$/color-third-party-service/pom.xml" />
       </set>
     </option>
   </component>

@@ -17,9 +17,8 @@ import java.util.Map;
 @Slf4j
 //@ResponseBody
 //@ControllerAdvice(basePackages = "com.atguigu.gulimall.product.controller")
-@RestControllerAdvice(basePackages = "com.atguigu.gulimall.product.controller")
+@RestControllerAdvice(basePackages = "com.color.mall.product.controller")
 public class ColorMallExceptionControllerAdvice {
-
 
     @ExceptionHandler(value= MethodArgumentNotValidException.class)
     public R handleVaildException(MethodArgumentNotValidException e){
@@ -27,17 +26,17 @@ public class ColorMallExceptionControllerAdvice {
         BindingResult bindingResult = e.getBindingResult();
 
         Map<String,String> errorMap = new HashMap<>();
-        bindingResult.getFieldErrors().forEach((fieldError)->{
-            errorMap.put(fieldError.getField(),fieldError.getDefaultMessage());
-        });
-        return R.error(BizCodeEnume.VAILD_EXCEPTION.getCode(),BizCodeEnume.VAILD_EXCEPTION.getMsg()).put("data",errorMap);
+        bindingResult.getFieldErrors().forEach(fieldError->
+                errorMap.put(fieldError.getField(),fieldError.getDefaultMessage()));
+//        return R.error(BizCodeEnume.VAILD_EXCEPTION.getCode(),BizCodeEnume.VAILD_EXCEPTION.getMsg()).put("data",errorMap);
+        return R.error(BizCodeEnume.VAILD_EXCEPTION).put("data",errorMap);
     }
 
     @ExceptionHandler(value = Throwable.class)
     public R handleException(Throwable throwable){
 
         log.error("错误：",throwable);
-        return R.error(BizCodeEnume.UNKNOW_EXCEPTION.getCode(),BizCodeEnume.UNKNOW_EXCEPTION.getMsg());
+        return R.error(BizCodeEnume.UNKNOW_EXCEPTION);
     }
 
 
