@@ -428,7 +428,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style  lang="scss" scoped>
 .btn-product {
   margin-top: -7px;
   padding-top: 3px;

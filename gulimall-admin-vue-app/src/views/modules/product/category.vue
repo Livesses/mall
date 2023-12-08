@@ -2,27 +2,27 @@
   <div>
     <div class="c-head">
       <el-switch
-          v-model="draggable"
-          active-text="开启拖拽"
-          inactive-text="关闭拖拽">
+        v-model="draggable"
+        active-text="开启拖拽"
+        inactive-text="关闭拖拽">
       </el-switch>
       <div>
         <el-button
-            class="b-button"
-            v-show="draggable"
-            type="primary"
-            plain
-            size="mini"
-            @click="batchSave"
+          class="b-button"
+          v-show="draggable"
+          type="primary"
+          plain
+          size="mini"
+          @click="batchSave"
         >
           批量保存
         </el-button>
         <el-button
-            class="b-button"
-            type="danger"
-            plain
-            size="mini"
-            @click="batchRemove"
+          class="b-button"
+          type="danger"
+          plain
+          size="mini"
+          @click="batchRemove"
         >
           批量删除
         </el-button>
@@ -30,54 +30,54 @@
     </div>
 
     <el-tree
-        :data="menu"
-        :props="defaultProps"
-        show-checkbox
-        node-key="catId"
-        :expand-on-click-node="false"
-        :default-expanded-keys="defaultKey"
-        :draggable="draggable"
-        :allow-drop="allowDrop"
-        @node-drop="handleDrop"
-        ref="menuTree"
+      :data="menu"
+      :props="defaultProps"
+      show-checkbox
+      node-key="catId"
+      :expand-on-click-node="false"
+      :default-expanded-keys="defaultKey"
+      :draggable="draggable"
+      :allow-drop="allowDrop"
+      @node-drop="handleDrop"
+      ref="menuTree"
     >
       <span class="custom-tree-node" slot-scope="{ node, data }">
         <span>{{ node.label }}</span>
         <span class="btns-product">
           <el-button
-              v-if="data.catLevel<3||data.children"
-              plain
-              class="btn-product"
-              type="primary"
-              size="mini"
-              @click="() => append(data)">
+            v-if="data.catLevel<3||data.children"
+            plain
+            class="btn-product"
+            type="primary"
+            size="mini"
+            @click="() => append(data)">
             添加子分类
           </el-button>
           <el-button
-              plain
-              class="btn-product"
-              type="warning"
-              size="mini"
-              @click="() => editMenu(data)">
+            plain
+            class="btn-product"
+            type="warning"
+            size="mini"
+            @click="() => editMenu(data)">
             编辑
           </el-button>
           <el-button
-              v-if="data.catLevel===3||!data.children"
-              plain
-              class="btn-product"
-              type="danger"
-              size="mini"
-              @click="() => remove(node, data)">
+            v-if="data.catLevel===3||!data.children"
+            plain
+            class="btn-product"
+            type="danger"
+            size="mini"
+            @click="() => remove(node, data)">
             删除
           </el-button>
         </span>
       </span>
     </el-tree>
     <el-dialog
-        :title="title"
-        :visible.sync="dialogVisible"
-        width="30%"
-        :close-on-click-modal="false"
+      :title="title"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :close-on-click-modal="false"
     >
       <el-form :model="category">
         <el-form-item label="分类名称">
@@ -212,7 +212,7 @@ export default {
       //   this.editCategory()
       // }
       this.dialogType === 'add' ? this.addCategory() :
-          this.dialogType === 'edit' ? this.editCategory() : this.addCategory()
+        this.dialogType === 'edit' ? this.editCategory() : this.addCategory()
     },
     //修改三级分类数据
     editCategory () {
